@@ -1,4 +1,4 @@
-//🚀🚀🚀 ==== Topic #1 Closures ==== 🚀🚀🚀//
+//🚀🚀🚀 ==== Topic #1 Closures ==== 🚀🚀🚀// //test
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
@@ -16,22 +16,60 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-// nestedFnction can access the variable internal because it is within the scope of myFunction. If the nestedFunction was separate from myFunction, then it would not be able to access internal.
+// nestedFunction can access the variable internal because it is within the scope of myFunction. If the nestedFunction was separate from myFunction, then it would not be able to access internal.
 
 
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
-function summation(splitNumber) {  //noValue is a parameter, therefore noValue has no value
+function summation(splitNumber) {
 
   /*Your Code Here*/
-  const array = []
-  let i;
-  for (i = 0; i < array.length; i--) {
-    array.push(splitNumber)
-    return array.reduce
+  const emptyArray=[splitNumber];
+  for (let i=splitNumber;i>0;i--){
+    if (i>0){
+      emptyArray.push(splitNumber-=1);
+    } else continue
   }
+  let sum=0;
+  for (let i=0;i<emptyArray.length;i++){
+  sum+=emptyArray[i];
+  }
+  return sum;
+  
+  console.log(emptyArray)
+  console.log(sum)
+
+  //attempt 2 lol
+  // const emptyArray=[];
+  // let sum=0
+  // for (let i=splitNumber;i>0;i--){
+  //   if (i>0){
+  //     emptyArray.push(splitNumber-=1);
+  //   } else continue
+  // // for (let i=0;i<emptyArray.length;i++){
+  // //   sum+=emptyArray[i];
+  // //  }
+  //  return emptyArray;
+  // }
+  
+  // console.log(emptyArray)
+  // console.log(sum)
+
+
+  //going to make a an empty array
+  //use a for loop that is equivalent to the parameter
+  //push 
+
+
+  //attempt 1 lol
+  // const array = []
+  // let i;
+  // for (i = 0; i < array.length; i--) {
+  //   array.push(splitNumber)
+  //   return array.reduce
+  // }
   
 }
  
@@ -56,25 +94,25 @@ const zooAnimals = [
   The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
   */
   function animalNames(animalArray){
-    const lowCaseAnimalNames = [];
-    for(let i = 0; i < animalArray.length; i++) {
-      let animalObj = {};
-      animalObj.name = animalArray[i].name;
-      animalObj.scientific = animalArray[i].scientific;
-      lowCaseAnimalNames.push(animalObj);
-      animalObj =  {}
-      return lowCaseAnimalNames.toString()
+    // const lowCaseAnimalNames = [];
+    // for(let i = 0; i < animalArray.length; i++) {
+    //   let animalObj = {};
+    //   animalObj.name = animalArray[i].name;
+    //   animalObj.scientific = animalArray[i].scientific;
+    //   lowCaseAnimalNames.push(animalObj);
+    //   animalObj =  {}
+    //   return lowCaseAnimalNames.toString()
     }
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
   */
   function lowerCaseNames(animalArray){
-    const lowCaseAnimalNames = [];
-    for(let i = 0; i < animalArray.length; i++) {
-      let animalObj = {};
-      animalObj
-    }
+    // const lowCaseAnimalNames = [];
+    // for(let i = 0; i < animalArray.length; i++) {
+    //   let animalObj = {};
+    //   animalObj
+    // }
   }
   
   
@@ -202,17 +240,17 @@ class CuboidMakerTwo{
     console.log('its working');
     return 'bar';
   }
-  // export default{
-  //   foo,
-  //   summation,
-  //   animalNames,
-  //   lowerCaseNames,
-  //   lowPopulationAnimals,
-  //   USApop,
-  //   consume, 
-  //   add,
-  //   multiply,
-  //   greeting,
-  //   CuboidMaker,
-  //   CuboidMakerTwo
+  export default{
+    foo,
+    summation,
+    animalNames,
+    lowerCaseNames,
+    lowPopulationAnimals,
+    USApop,
+    consume, 
+    add,
+    multiply,
+    greeting,
+    CuboidMaker,
+    CuboidMakerTwo
   }
