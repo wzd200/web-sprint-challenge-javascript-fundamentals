@@ -37,9 +37,6 @@ function summation(splitNumber) {
   sum+=emptyArray[i];
   }
   return sum;
-  
-  console.log(emptyArray)
-  console.log(sum)
 
   //attempt 2 lol
   // const emptyArray=[];
@@ -93,7 +90,26 @@ const zooAnimals = [
   /* 🦁🦁🦁 Request 1: .forEach() 🦁🦁🦁
   The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
   */
-  function animalNames(animalArray){
+
+ function animalNames(animalArray){
+  const displayNames=[];
+  animalArray.forEach(item =>{
+    displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)
+  })
+
+  return displayNames;
+
+
+  //attempt 2 lol
+  // function animalNames(animalArray){
+  //   const displayNames=[];
+  //   const namePuller = function(){
+  //     displayNames.push(`Name: ${animalArray.animal_name}, Scientific: ${animalArray.scientific_name}`)
+  //   }
+  //   animalArray.forEach(namePuller)
+  //   return displayNames;
+
+    //attempt 1 lol
     // const lowCaseAnimalNames = [];
     // for(let i = 0; i < animalArray.length; i++) {
     //   let animalObj = {};
@@ -107,13 +123,35 @@ const zooAnimals = [
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
   */
-  function lowerCaseNames(animalArray){
+  function lowerCaseNames(animalArray2){
+    const CaseAnimalNames = animalArray2.map((animal)=>{
+      return animal.animal_name.toLowerCase()
+    })
+    console.log(CaseAnimalNames);
+    return CaseAnimalNames;
+  }
+
+    //second attempt lol
+    // newDisplayNames=[];
+    // const animalNameGetter = animalArray2.forEach(item =>{
+    //   newdisplayNames.push(`${item.animal_name}`)
+    //   return newDisplayNames;
+    // })
+    // const lowCaseAnimalNames = animalArray2.map(animalNameGetter){
+    //   return
+    // }
+    
+    // const lowCaseAnimalNames = animalArray2.map();
+    // return lowCaseAnimalNames
+    // }
+
+    //attempt 1 lol
     // const lowCaseAnimalNames = [];
     // for(let i = 0; i < animalArray.length; i++) {
     //   let animalObj = {};
     //   animalObj
     // }
-  }
+  
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
