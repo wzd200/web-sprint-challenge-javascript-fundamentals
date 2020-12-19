@@ -124,11 +124,10 @@ const zooAnimals = [
   The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
   */
   function lowerCaseNames(animalArray2){
-    const CaseAnimalNames = animalArray2.map((animal)=>{
+    const lowCaseAnimalNames = animalArray2.map((animal)=>{
       return animal.animal_name.toLowerCase()
-    })
-    console.log(CaseAnimalNames);
-    return CaseAnimalNames;
+    });
+    return lowCaseAnimalNames;
   }
 
     //second attempt lol
@@ -157,16 +156,22 @@ const zooAnimals = [
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
   */
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(animalArray3){
+    const lowPopulationAnimals = animalArray3.filter((pop)=>{
+      return pop.population<5;
+    });
+    return lowPopulationAnimals;
   }
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
   */
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(animalArray4){
+    const popReduction=animalArray4.reduce((total, pop)=>{
+      return total+=pop.population;
+    }, 0);
+    return popReduction;
   }
   
   
@@ -199,9 +204,9 @@ const zooAnimals = [
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-  console.log(consume(2, 2, add)); // 4
-  console.log(consume(10, 16, multiply)); // 160
-  console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+  //console.log(consume(2, 2, add)); // 4
+  //console.log(consume(10, 16, multiply)); // 160
+  //console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
   
   
 // 🦁💪 Stretch: If you haven't already, convert your array method callbacks into arrow functions 🦁💪
@@ -215,15 +220,17 @@ const zooAnimals = [
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
   Create a constructor function named CuboidMaker that accepts properties for length, width, and height which can be initialized as an object
 */
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(length){
+  this.length=length;
 }
 
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
-
+CuboidMaker.prototype.volume=function(){
+  return this.length*this.width*this.height
+}
 
 
 
@@ -254,6 +261,9 @@ function CuboidMaker(/*Your Code Here */){
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
+  constructor(length){
+    this.length=length;
+  }
 
 }
 
